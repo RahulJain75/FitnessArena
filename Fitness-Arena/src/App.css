@@ -1,0 +1,1386 @@
+body {
+  background-color: #e4e4e4;
+  height: 100%;
+}
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.wrapper .content {
+  flex: 1;
+  /* padding: 5px; */
+  /* Your other content styles */
+}
+
+/* Header.css */
+.header {
+  position: sticky;
+  top: 0;
+  width: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #08b7ca;
+  padding: 10px 20px;
+  z-index: 1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  flex: 1;
+}
+
+.logo img {
+  height: 50px;
+  mix-blend-mode: color-burn;
+}
+
+.title {
+  flex: 2;
+  text-align: center;
+}
+
+.title h1 {
+  margin: 0;
+  color: black;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.nav ul li {
+  margin-right: 10px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+
+.nav a:hover {
+  color: #333;
+}
+
+.auth-buttons {
+  display: flex;
+  align-items: center;
+  padding-right: 10px;
+}
+
+.auth-buttons button {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 8px 7px;
+  margin-left: 2px;
+  cursor: pointer;
+  border-radius: 15px;
+  transition: background-color 0.3s;
+}
+
+.auth-buttons button:hover {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #000;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  margin-left: auto;
+  padding-right: 0rem;
+}
+
+.hamburger .line {
+  width: 20px;
+  height: 2px;
+  background-color: #fff;
+  margin: 2px 0;
+  color: black;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .header {
+    position: sticky;
+    height: 1.5rem;
+    width: auto;
+  }
+
+  .nav {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background-color: #08b7ca;
+    width: auto;
+    padding: 10px 0;
+  }
+
+  .logo img {
+    height: 22px;
+  }
+
+  .title h1 {
+    font-size: large;
+  }
+
+  .nav.open {
+    display: flex;
+  }
+
+  .nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav ul li {
+    margin: 2px 0;
+  }
+
+  .auth-buttons {
+    flex-direction: column;
+    margin-top: 10px;
+  }
+
+  .auth-buttons button {
+    margin: 5px 0;
+    padding: 6px 10px;
+    font-size: .8rem;
+  }
+
+  .hamburger {
+    display: flex;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+  }
+
+  .title {
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+/* Dashboard.css */
+.dashboard {
+  padding: 20px;
+  background-color: #f1f1f1;
+}
+
+.user-card {
+  background-color: #fff;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.user-card h2 {
+  margin: 0 0 10px;
+}
+
+.user-card p {
+  margin: 5px 0;
+}
+
+/* Responsive layout */
+@media screen and (max-width: 600px) {
+  .user-card {
+    padding: 10px;
+  }
+}
+
+
+
+
+/* Base styles for the poster component */
+.poster {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.poster .button button{
+  position: absolute;
+  top: 50%;
+  left: 80%;
+  height: 2rem;
+  transform: translate(-50%, -50%);
+  color: white;
+  border: #08b7ca;
+  background-color: #08b7ca;
+  border-radius: .5rem;
+  text-align: center;
+}
+.poster .button button:hover{
+  scale: 1.1;
+}
+
+.poster img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.postertext {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #08b7ca;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(228, 215, 215, 0.5);
+}
+
+.postertext h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.postertext h1 mark {
+  background-color: rgba(255, 255, 0, 0.7);
+  padding: 0 0.2em;
+}
+
+.postertext h2 {
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .postertext h1 {
+    font-size: 2rem;
+  }
+
+  .postertext h2 {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .postertext h1 {
+    font-size: .8rem;
+  }
+  .poster .button button{
+    height: 1rem;
+    font-size: .5rem;
+  }
+
+  .postertext h2 {
+    font-size: .7rem;
+  }
+}
+
+
+/* Image.css */
+
+.carousel-wrapper {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: #e4e4e4;
+  border-radius: 8px;
+}
+
+.carousel img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.carousel .legend {
+  background: rgba(0, 0, 0, 0.5);
+  color: #e4e4e4;
+  font-size: 1rem;
+  padding: 10px;
+  border-radius: 0 0 8px 8px;
+  text-align: center;
+}
+
+.carousel .control-dots .dot {
+  background: #007bff;
+  box-shadow: none;
+  width: 12px;
+  height: 12px;
+  margin: 0 4px;
+}
+
+.carousel .control-dots .dot.selected {
+  background: #0056b3;
+}
+
+.carousel .control-arrow {
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+.carousel .control-arrow:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .carousel-wrapper {
+    padding: 15px;
+    width: 80%;
+  }
+
+  .carousel .legend {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  .carousel .control-arrow {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-wrapper {
+    padding: 10px;
+  }
+
+  .carousel .legend {
+    font-size: 0.8rem;
+    padding: 6px;
+  }
+
+  .carousel .control-arrow {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+
+/* Why.css */
+
+.why {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #e4e4e4;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.why h3 {
+  font-size: 1.5rem;
+  color: #08b7ca;
+  margin-bottom: 10px;
+}
+
+.why h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.slider-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.slider-wrapper {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.item {
+  min-width: 100%;
+  height: 15rem;
+  box-sizing: border-box;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #08b7ca;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* Box shadow added */
+}
+
+.item h1 {
+  font-size: 1.5rem;
+  color: #000000;
+  margin-bottom: 10px;
+}
+
+.item p {
+  font-size: 1rem;
+  color: #000000;
+  line-height: 1.5;
+}
+
+.slider-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #08b7ca;
+  border: none;
+  color: white;
+  padding: px;
+  cursor: pointer;
+  z-index: 1;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  box-shadow: 2px 2px 4px black;
+}
+
+.slider-button.left {
+  left: 10px;
+}
+
+.slider-button.right {
+  right: 10px;
+}
+
+.slider-button:hover {
+  background: #005f73;
+}
+
+@media (max-width: 768px) {
+  .item {
+    padding: 15px;
+  }
+
+  .why h1 {
+    font-size: 2rem;
+  }
+
+  .why h3 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .item {
+    padding: 10px;
+  }
+
+  .why h1 {
+    font-size: 1.5rem;
+  }
+
+  .why h3 {
+    font-size: 1rem;
+  }
+}
+
+
+/* Plans.css */
+
+.Plans {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #e4e4e4;
+  border-top: 1px solid #c7c0c0;
+}
+
+.Plans h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.plans {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.plan {
+  flex: 0 1 calc(33.3333% - 20px);
+  margin-bottom: 30px;
+  padding: 20px;
+  border-radius: 10px;
+  background: #e4e4e4;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid #08b7ca;
+  transition: transform 0.3s;
+}
+
+.plan:hover {
+  transform: translateY(-5px);
+}
+
+.plan h1 {
+  font-size: 1.5rem;
+  color: black;
+  margin-bottom: 10px;
+}
+
+.plan h2 {
+  font-size: 1.2rem;
+  color: black;
+  margin-bottom: 20px;
+}
+
+.plan mark {
+  color: #08b7ca;
+  background-color: #e4e4e4;
+}
+
+.plan p {
+  font-size: 1rem;
+  color: rgb(0, 0, 0);
+  margin-bottom: 10px;
+}
+
+.planbutton {
+  margin-top: 20px;
+}
+
+.planbutton button {
+  background-color: #08b7ca;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.planbutton button:hover {
+  background-color: #005f73;
+}
+
+@media (max-width: 768px) {
+  .plan {
+    flex-basis: 45%;
+  }
+}
+
+@media (max-width: 480px) {
+  .plan {
+    flex-basis: 100%;
+  }
+}
+
+
+/* Images.css */
+
+.gym-image-cluster {
+  display: flex; /* Allow images to sit side-by-side */
+  flex-wrap: wrap; /* Wrap to multiple rows if needed */
+  margin: 0; /* Remove default margin for tighter arrangement */
+  padding: 0; /* Remove default padding for tighter arrangement */
+  width: fit-content; /* Make the container fit its content (square shape) */
+  height: fit-content; /* Make the container fit its content (square shape) */
+}
+
+.image-container {
+  margin: 5px; /* Add a small margin for slight separation (adjust as needed) */
+  /* No explicit width or height set to preserve original image dimensions */
+}
+
+.image-container img {
+  width: 100%; /* Ensure images fill container width */
+  height: auto; /* Maintain aspect ratio based on image dimensions */
+}
+
+
+
+
+
+/* Contact.css */
+
+.contact-container {
+  max-width: 600px;
+  width: 100%;
+  padding: 40px;
+  background-color: #e4e4e4;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  margin: 20px auto 50px;
+  /* Center the contact component and add space at the bottom */
+  text-align: center;
+}
+
+.contact-container h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.contact-container h2 {
+  font-size: 1.8rem;
+  color: #08b7ca;
+  margin-bottom: 10px;
+}
+
+.contact-container p {
+  font-size: 1rem;
+  color: black;
+  margin-bottom: 30px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.form-group label {
+  font-size: 1.1rem;
+  color: black;
+  margin-bottom: 5px;
+}
+
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border-color: #08b7ca;
+  /* border: 1px solid #08b7ca; */
+  background-color: #e4e4e4;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #08b7ca;
+  box-shadow: 0 0 8px rgba(8, 183, 202, 0.3);
+}
+
+.recaptcha {
+  font-size: 0.9rem;
+  color: black;
+  margin-bottom: 20px;
+}
+
+.submit-button {
+  background-color: #08b7ca;
+  color: #ffffff;
+  border: none;
+  padding: 15px;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.submit-button:hover {
+  background-color: #005f73;
+  box-shadow: 0 5px 10px rgba(0, 95, 115, 0.2);
+}
+
+@media (max-width: 768px) {
+  .contact-container {
+    padding: 30px 20px;
+    width: 90%;
+  }
+
+  .contact-container h1 {
+    font-size: 2rem;
+  }
+
+  .contact-container h2 {
+    font-size: 1.5rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 10px;
+    font-size: 0.9rem;
+    width: 90%;
+  }
+
+  .submit-button {
+    padding: 12px 20px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-container {
+    padding: 20px 15px;
+  }
+
+  .contact-container h1 {
+    font-size: 1.8rem;
+  }
+
+  .contact-container h2 {
+    font-size: 1.2rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 8px;
+    font-size: 0.8rem;
+  }
+
+  .submit-button {
+    padding: 10px 15px;
+    font-size: 0.9rem;
+  }
+}
+
+
+/*Login*/
+/* CSS for the login form */
+.login .container {
+  padding: 16px;
+}
+
+.login .container b {
+  color: white;
+}
+
+.login .psw a {
+  color: white;
+}
+
+input[type="text"],
+input[type="password"],
+.login button {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.login h2 {
+  text-align: center;
+}
+
+.login button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+
+}
+
+.otherlinks {
+  display: flex;
+  justify-content: space-between;
+}
+
+.otherbuttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.login button:hover {
+  opacity: 0.8;
+}
+
+.login .cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+.login .container {
+  background-color: #f1f1f1;
+}
+
+.login span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, stack the labels on top of the inputs */
+@media screen and (max-width: 600px) {
+  .login .container {
+    width: auto;
+  }
+
+  .otherbuttons {
+    display: grid;
+  }
+
+  input[type="text"],
+  input[type="password"],
+  .login button {
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .login label {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .login .cancelbtn {
+    width: 100%;
+  }
+
+  .login span.psw {
+    float: none;
+    padding-top: 0;
+    display: block;
+    text-align: center;
+  }
+}
+
+
+/*Admin Login*/
+/* CSS for the Admin login form */
+.adminlogin .container {
+  padding: 16px;
+}
+
+.adminlogin h2 {
+  text-align: center;
+}
+
+input[type="text"],
+input[type="password"],
+.adminlogin button {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.adminlogin button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.adminlogin button:hover {
+  opacity: 0.8;
+}
+
+.adminlogin .cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+.adminlogin .container {
+  background-color: #f1f1f1;
+}
+
+.adminlogin span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, stack the labels on top of the inputs */
+@media screen and (max-width: 600px) {
+  .adminlogin .container {
+    width: auto;
+  }
+
+  input[type="text"],
+  input[type="password"],
+  .adminlogin button {
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .adminlogin label {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .adminlogin .cancelbtn {
+    width: 100%;
+  }
+
+  .adminlogin span.psw {
+    float: none;
+    padding-top: 0;
+    display: block;
+    text-align: center;
+  }
+}
+
+/* forget password css */
+.email-otp-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.email-otp-container h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.email-input {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.send-otp-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #08b7ca;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.send-otp-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.send-otp-button:hover:enabled {
+  background-color: #007b8a;
+}
+
+.error-message {
+  margin-top: 10px;
+  color: red;
+}
+
+@media (max-width: 768px) {
+  .email-otp-container {
+    margin: 20px;
+    padding: 15px;
+  }
+
+  .email-input {
+    font-size: 14px;
+  }
+
+  .send-otp-button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .email-otp-container {
+    padding: 10px;
+  }
+
+  .email-input {
+    font-size: 12px;
+  }
+
+  .send-otp-button {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}
+
+/* update password css */
+.form-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.form-container h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.form-input {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.submit-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #08b7ca;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.submit-button:hover:enabled {
+  background-color: #007b8a;
+}
+
+.error-message {
+  margin-top: 10px;
+  color: red;
+}
+
+@media (max-width: 768px) {
+  .form-container {
+    margin: 20px;
+    padding: 15px;
+  }
+
+  .form-input {
+    font-size: 14px;
+  }
+
+  .submit-button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-container {
+    padding: 10px;
+  }
+
+  .form-input {
+    font-size: 12px;
+  }
+
+  .submit-button {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}
+
+
+
+
+
+
+/* Signup.css */
+
+.signup {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.container {
+  padding: 20px;
+  background-color: #f1f1f1;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.signup .container .clearfix .signupbuttons {
+  padding-top: .8rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.signup .container .clearfix .signupbuttons button {
+  width: auto;
+}
+
+.signup .container .dob {
+  display: flex;
+  gap: .4rem;
+}
+
+.container h1 {
+  text-align: center;
+}
+
+.container p {
+  text-align: center;
+  color: #666;
+}
+
+.container input[type="text"],
+.container input[type="password"],
+.container input[type="tel"],
+.container input[type="checkbox"] {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.container input[type="checkbox"] {
+  margin-bottom: 16px;
+}
+
+.container button {
+  background-color: #08b7ca;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.container button:hover {
+  background-color: #005f73;
+}
+
+.container .cancelbtn {
+  background-color: #f44336;
+}
+
+.container .clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    width: 50%;
+    margin: auto;
+  }
+
+
+  .container input[type="text"],
+  .container input[type="password"],
+  .container input[type="tel"],
+  .container input[type="checkbox"] {
+    width: calc(100% - 20px);
+    margin: 8px 0;
+  }
+}
+
+/* @media screen and (max-width: 768px) {
+  .signup .container .dob{
+    display: grid;
+    grid-template-columns: auto;
+    gap: .6rem;
+    padding-bottom: .6rem;
+  }
+} */
+
+@media screen and (max-width: 480px) {
+  .signup .container .dob {
+    display: grid;
+    grid-template-columns: auto;
+    gap: .6rem;
+    padding-bottom: .6rem;
+  }
+}
+
+/* Footer CSS */
+.footer {
+  position: static;
+  padding: 20px;
+  text-align: center;
+  /* border-top: 2px solid #c7c0c0 ; */
+  box-shadow: 0 2px 4px 2px grey;
+}
+
+.footer img {
+  width: 20%;
+  mix-blend-mode: color-burn;
+}
+
+.footer1 a {
+  font-size: 20px;
+  color: black;
+  margin: 10px;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: #08b7ca;
+}
+
+@media (max-width: 480px) {
+  .footer img {
+    width: 40%;
+  }
+
+  .footer1 a {
+    font-size: 15px;
+  }
+}
+
+
+.video-component {
+  text-align: center;
+  
+}
+.video-component video{
+  height: 20rem;
+  width: 35rem;
+}
+
+.video-controls {
+  margin-top: 10px;
+}
+
+.video-controls button {
+  margin: 0 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+
+/* TrainerCarousel.css */
+
+/* Styles for desktop */
+.trainer-carousel-container {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  padding-bottom: 2rem;
+  border-top: 1px solid #c7c0c0;
+}
+
+.trainer-carousel-container h2 {
+  color: #08b7ca;
+}
+
+.trainer-card-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.trainer-card {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  width: 100%;
+  max-width: 300px; /* Adjust the max-width as needed */
+  margin: 10px;
+}
+
+.trainer-photo {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+
+.trainer-card:hover .trainer-photo {
+  transform: scale(1.05);
+}
+
+.trainer-info {
+  position: absolute;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.trainer-info h3 {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+/* Custom styles for carousel controls */
+.control-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: #fff;
+  font-size: 2em;
+  cursor: pointer;
+}
+
+.control-prev {
+  left: 15px;
+}
+
+.control-next {
+  right: 15px;
+}
+
+/* Media queries for responsiveness */
+
+@media only screen and (max-width: 768px) {
+  .trainer-carousel-container {
+    width: 90%;
+  }
+
+  .trainer-card {
+    max-width: 250px;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .trainer-card {
+    max-width: 200px;
+  }
+  .trainer-card .trainer-info h3{
+    font-size: .7rem;
+  }
+}
