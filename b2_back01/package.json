@@ -1,0 +1,27 @@
+{
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.5.0",
+    "mongoose": "^8.3.2",
+    "mongose": "^0.0.2-security",
+    "nodemailer": "^6.9.13",
+    "nodemon": "^3.1.0",
+    "tls": "^0.0.1"
+  },
+  "name": "b2_backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {
+    "@appland/appmap-agent-js": "^14.2.0"
+  },
+  "scripts": {
+    "start": "nodemon index"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
